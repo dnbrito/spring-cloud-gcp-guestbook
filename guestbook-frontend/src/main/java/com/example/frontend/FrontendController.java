@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.*;
 import java.util.*;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 
 @Controller
+@RefreshScope
 @SessionAttributes("name")
 public class FrontendController {
 	@Autowired
