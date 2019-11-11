@@ -6,16 +6,21 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.beans.factory.annotation.*;
 import java.util.*;
+import org.springframework.cloud.gcp.pubsub.core.*;
 
 @Controller
 @SessionAttributes("name")
 public class FrontendController {
+
 	@Autowired
 	private GuestbookMessagesClient client;
+
+	@Autowired
+	private PubSubTemplate pubSubTemplate;
 	
 	@Value("${greeting:Hello}")
 	private String greeting;
-	
+
 	@GetMapping("/")
 	public String index(Model model) {
 		if (model.containsAttribute("name")) {
@@ -30,6 +35,7 @@ public class FrontendController {
 	public String post(@RequestParam String name, @RequestParam String message, Model model) {
 		model.addAttribute("name", name);
 		if (message != null && !message.trim().isEmpty()) {
+            pubSubTemplate.publish("messages", name + ": " + message);
 			// Post the message to the backend service
 			Map<String, String> payload = new HashMap<>();
 			payload.put("name", name);
