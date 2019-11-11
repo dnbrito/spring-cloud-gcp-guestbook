@@ -35,12 +35,15 @@ public class FrontendApplication {
 	// This configures the Vision API settings with a credential using the
 	// the scope we specified in the application.properties.
 	@Bean
-	public ImageAnnotatorSettings imageAnnotatorSettings(CredentialsProvider credentialsProvider) throws IOException {
-		return ImageAnnotatorSettings.newBuilder().setCredentialsProvider(credentialsProvider).build();
+	public ImageAnnotatorSettings imageAnnotatorSettings(
+			CredentialsProvider credentialsProvider) throws IOException {
+		return ImageAnnotatorSettings.newBuilder()
+			.setCredentialsProvider(credentialsProvider).build();
 	}
 
 	@Bean
-	public ImageAnnotatorClient imageAnnotatorClient(ImageAnnotatorSettings settings) throws IOException {
+	public ImageAnnotatorClient imageAnnotatorClient(
+			ImageAnnotatorSettings settings) throws IOException {
 		return ImageAnnotatorClient.create(settings);
 	}
 
