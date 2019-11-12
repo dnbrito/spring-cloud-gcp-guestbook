@@ -4,3 +4,4 @@ CREATE TABLE guestbook_message (
     image_uri STRING(255),
     message STRING(255)
 ) PRIMARY KEY (id);
+

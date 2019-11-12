@@ -55,7 +55,6 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -126,6 +125,16 @@
 					<version>1</version>
 				</configuration>
 			</plugin>
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>0.9.6</version>
+                <configuration>
+                    <to>
+                        <image>gcr.io/qwiklabs-gcp-00-bf3a47905385/guestbook-frontend</image>
+                    </to>
+                  </configuration>
+            </plugin>
 		</plugins>
 	</build>
 

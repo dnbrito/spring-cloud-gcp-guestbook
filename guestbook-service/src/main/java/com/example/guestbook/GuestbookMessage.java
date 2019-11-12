@@ -7,18 +7,18 @@ import org.springframework.data.annotation.Id;
 @Data
 @Table(name = "guestbook_message")
 public class GuestbookMessage {
-        @PrimaryKey
-        @Id
-        private String id;
+	@PrimaryKey
+	@Id
+	private String id;
 
-        private String name;
+	private String name;
+	
+	private String message;
 
-        private String message;
+	@Column(name = "image_uri")
+	private String imageUri;
 
-        @Column(name = "image_uri")
-        private String imageUri;
-
-        public GuestbookMessage() {
-                this.id = java.util.UUID.randomUUID().toString();
-        }
+	public GuestbookMessage() {
+		this.id = java.util.UUID.randomUUID().toString();
+	}
 }
