@@ -90,6 +90,15 @@
 			<groupId>com.google.cloud</groupId>
 			<artifactId>google-cloud-vision</artifactId>
 		</dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.micrometer</groupId>
+            <artifactId>micrometer-registry-prometheus</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 	</dependencies>
 
 	<dependencyManagement>
@@ -131,9 +140,9 @@
                 <version>0.9.6</version>
                 <configuration>
                     <to>
-                        <image>gcr.io/qwiklabs-gcp-00-bf3a47905385/guestbook-frontend</image>
+                        <image>gcr.io/qwiklabs-gcp-00-28cc16232e6f/guestbook-frontend</image>
                     </to>
-                  </configuration>
+                </configuration>
             </plugin>
 		</plugins>
 	</build>

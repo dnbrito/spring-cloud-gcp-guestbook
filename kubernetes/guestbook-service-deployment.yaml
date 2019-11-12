@@ -34,7 +34,7 @@ spec:
           secretName: guestbook-service-account
       containers:
       - name: guestbook-service
-        image: gcr.io/qwiklabs-gcp-00-bf3a47905385/guestbook-service:latest
+        image: gcr.io/qwiklabs-gcp-00-28cc16232e6f/guestbook-service:latest
         volumeMounts:
         - name: credentials 
           mountPath: "/etc/credentials"

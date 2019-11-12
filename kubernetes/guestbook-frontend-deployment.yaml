@@ -28,6 +28,10 @@ spec:
     metadata:
       labels:
         app: guestbook-frontend
+      annotations:
+        prometheus.io/scrape: 'true'
+        prometheus.io/path: '/actuator/prometheus'
+        prometheus.io/port: '8081'
     spec:
       volumes:
       - name: credentials
@@ -35,7 +39,7 @@ spec:
           secretName: guestbook-service-account
       containers:
       - name: guestbook-frontend
-        image: gcr.io/qwiklabs-gcp-00-bf3a47905385/guestbook-frontend:latest
+        image: gcr.io/qwiklabs-gcp-00-28cc16232e6f/guestbook-frontend:latest
         volumeMounts:
         - name: credentials 
           mountPath: "/etc/credentials"

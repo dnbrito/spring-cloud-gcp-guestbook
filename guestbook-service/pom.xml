@@ -105,7 +105,7 @@
                 <version>0.9.6</version>
                 <configuration>
                     <to>
-                        <image>gcr.io/qwiklabs-gcp-00-bf3a47905385/guestbook-service</image>
+                        <image>gcr.io/qwiklabs-gcp-00-28cc16232e6f/guestbook-service</image>
                     </to>
                 </configuration>
             </plugin>
